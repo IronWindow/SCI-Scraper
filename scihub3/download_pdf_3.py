@@ -160,7 +160,8 @@ if __name__ == "__main__":
     # download_pdf(pdf_url_1, doi_1)
     print("To Continue work input C")
     print("To start from specific number, input S")
-    flag = str(input("Press Enter After Input: "))
+    print("If Enter directly, Default will be 'C'")
+    flag = str(input("Press Enter After Input: ")) or "C"
     if flag == "C":
         done_row = find_row()
         find_all_pdf("doi_list_rev.csv", done_row)
