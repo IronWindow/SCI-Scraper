@@ -158,5 +158,19 @@ if __name__ == "__main__":
     # pdf_url_1 = "location.href='//zero.sci-hub.se/4371/2aa19134c17c5c3fe37bd124cd2b7eec/jorne1982.pdf?download=true'"
     # doi_1 = "12345/123"
     # download_pdf(pdf_url_1, doi_1)
-    done_row = find_row()
-    find_all_pdf("doi_list_rev.csv", done_row)
+    print("To Continue work input C")
+    print("To start from specific number, input S")
+    flag = str(input("Press Enter After Input: "))
+    if flag == "C":
+        done_row = find_row()
+        find_all_pdf("doi_list_rev.csv", done_row)
+    elif flag == "S":
+        done_row = int(input("input the num of processed row: "))
+        if type(done_row) == int:
+            find_all_pdf("doi_list_rev.csv", done_row)
+        else:
+            print("Please input an int number")
+            print(done_row)
+    else:
+        print("Typo")
+
